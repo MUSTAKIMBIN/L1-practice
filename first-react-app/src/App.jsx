@@ -1,7 +1,15 @@
+import Blogs from "./components/Blogs";
+import BookMarks from "./components/BookMarks";
+import Header from "./components/Header";
+
 function App() {
   return (
     <div>
-      <p className="text-4xl">my frist components</p>
+      <Header></Header>
+      <div className="flex">
+        <Blogs></Blogs>
+        <BookMarks></BookMarks>
+      </div>
     </div>
   );
 }
