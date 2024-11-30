@@ -5,16 +5,20 @@ import Header from "./components/Header";
 
 function App() {
   const [bookMarks, setBookMarks] = useState([]);
+  const [times, setTime] = useState(0);
   const handleBookMark = (book) => {
     const newBookMarks = [...bookMarks, book];
     setBookMarks(newBookMarks);
+  };
+  const handleTime = (time) => {
+    setTime(times + time);
   };
   return (
     <div>
       <Header></Header>
       <div className="flex w-4/5 mx-auto gap-2">
-        <Blogs handleBookMark={handleBookMark}></Blogs>
-        <BookMarks bookMarks={bookMarks}></BookMarks>
+        <Blogs handleTime={handleTime} handleBookMark={handleBookMark}></Blogs>
+        <BookMarks times={times} bookMarks={bookMarks}></BookMarks>
       </div>
     </div>
   );

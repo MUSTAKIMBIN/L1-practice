@@ -1,7 +1,7 @@
 import React from "react";
 import { CiBookmarkCheck } from "react-icons/ci";
 
-const Blog = ({ blog, handleBookMark }) => {
+const Blog = ({ blog, handleBookMark, handleTime }) => {
   const {
     cover,
     title,
@@ -37,7 +37,10 @@ const Blog = ({ blog, handleBookMark }) => {
           <li>{hashtags[4]}</li>
         </ul>
       </div>
-      <button className="my-4 text-fuchsia-500 font-semibold underline">
+      <button
+        onClick={() => handleTime(reading_time)}
+        className="my-4 text-fuchsia-500 font-semibold underline"
+      >
         markAsRead
       </button>
     </div>
