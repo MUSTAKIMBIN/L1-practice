@@ -1,4 +1,5 @@
 import React from "react";
+import BookMark from "./BookMark";
 
 const BookMarks = ({ bookMarks }) => {
   console.log(bookMarks);
@@ -6,7 +7,9 @@ const BookMarks = ({ bookMarks }) => {
     <div className="w-1/3">
       <h4>Book Mark blog: {bookMarks.length}</h4>
       <div>
-        <h4>{bookMarks.title}</h4>
+        {bookMarks.map((bookMark) => (
+          <BookMark bookMark={bookMark}></BookMark>
+        ))}
       </div>
     </div>
   );
