@@ -1,6 +1,7 @@
 import React from "react";
+import { CiBookmarkCheck } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookMark }) => {
   const {
     cover,
     title,
@@ -11,16 +12,21 @@ const Blog = ({ blog }) => {
     hashtags,
   } = blog;
   return (
-    <div>
-      <img src={cover} alt="img" />
-      <p>{title}</p>
+    <div className="border-red-500 border-2 rounded-2xl my-5">
+      <img src={cover} className="w-full h-44 rounded-xl" alt="img" />
+      <p className="text-2xl font-bold">{title}</p>
       <p>{author}</p>
       <div className="w-8 ">
         <img src={author_img} className="rounded-full" alt="" />
       </div>
       <div className="flex justify-between">
         <p className="text-sm">Posted date: {posted_date}</p>
-        <p className="text-sm">{reading_time} min to read</p>
+        <div className="flex gap-x-3">
+          <p className="text-sm">{reading_time} min to read</p>
+          <button onClick={handleBookMark}>
+            <CiBookmarkCheck />
+          </button>
+        </div>
       </div>
       <div>
         <ul>
@@ -31,7 +37,9 @@ const Blog = ({ blog }) => {
           <li>{hashtags[4]}</li>
         </ul>
       </div>
-      <button>markAsRead</button>
+      <button className="my-4 text-fuchsia-500 font-semibold underline">
+        markAsRead
+      </button>
     </div>
   );
 };
