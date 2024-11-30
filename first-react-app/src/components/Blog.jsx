@@ -23,7 +23,7 @@ const Blog = ({ blog, handleBookMark }) => {
         <p className="text-sm">Posted date: {posted_date}</p>
         <div className="flex gap-x-3">
           <p className="text-sm">{reading_time} min to read</p>
-          <button onClick={handleBookMark}>
+          <button onClick={() => handleBookMark(blog)}>
             <CiBookmarkCheck />
           </button>
         </div>
