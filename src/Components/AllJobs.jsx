@@ -12,7 +12,7 @@ const AllJobs = () => {
     <div className="my-10">
       <div>
         <h3 className="text-xl font-semibold text-center">Feature Job</h3>
-        <div>
+        <div className="md:grid grid-cols-2 gap-5 my-10">
           {jobs.map((job, idx) => (
             <SingleJobData key={idx} job={job}></SingleJobData>
           ))}
